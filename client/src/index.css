@@ -13,7 +13,7 @@
   --card-foreground: hsl(0, 0%, 98%);
   --border: hsl(240, 3.7%, 15.9%);
   --input: hsl(240, 3.7%, 15.9%);
-  --primary: hsl(158, 100%, 50%);
+  --primary: hsl(320, 100%, 60%);
   --primary-foreground: hsl(0, 0%, 0%);
   --secondary: hsl(240, 3.7%, 15.9%);
   --secondary-foreground: hsl(0, 0%, 98%);
@@ -21,13 +21,14 @@
   --accent-foreground: hsl(0, 0%, 98%);
   --destructive: hsl(0, 62.8%, 30.6%);
   --destructive-foreground: hsl(0, 0%, 98%);
-  --ring: hsl(158, 100%, 50%);
+  --ring: hsl(320, 100%, 60%);
   --radius: 0.75rem;
   
-  /* Custom Gen Z colors */
-  --neon-green: hsl(158, 100%, 50%);
-  --hot-pink: hsl(320, 100%, 50%);
-  --cyber-blue: hsl(195, 100%, 50%);
+  /* Custom neon colors matching logo */
+  --neon-pink: hsl(320, 100%, 60%);
+  --neon-magenta: hsl(310, 100%, 55%);
+  --cyber-blue: hsl(200, 100%, 60%);
+  --electric-blue: hsl(210, 100%, 65%);
   --glass: hsla(0, 0%, 100%, 0.05);
   --glass-border: hsla(0, 0%, 100%, 0.1);
 }
@@ -43,7 +44,7 @@
   --card-foreground: hsl(0, 0%, 98%);
   --border: hsl(240, 3.7%, 15.9%);
   --input: hsl(240, 3.7%, 15.9%);
-  --primary: hsl(158, 100%, 50%);
+  --primary: hsl(320, 100%, 60%);
   --primary-foreground: hsl(0, 0%, 0%);
   --secondary: hsl(240, 3.7%, 15.9%);
   --secondary-foreground: hsl(0, 0%, 98%);
@@ -51,7 +52,7 @@
   --accent-foreground: hsl(0, 0%, 98%);
   --destructive: hsl(0, 62.8%, 30.6%);
   --destructive-foreground: hsl(0, 0%, 98%);
-  --ring: hsl(158, 100%, 50%);
+  --ring: hsl(320, 100%, 60%);
 }
 
 @layer base {
@@ -73,14 +74,14 @@
   }
   
   .gradient-text {
-    background: linear-gradient(45deg, var(--neon-green), var(--cyber-blue));
+    background: linear-gradient(45deg, var(--neon-pink), var(--cyber-blue));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
   .gradient-border {
-    background: linear-gradient(45deg, var(--neon-green), var(--hot-pink), var(--cyber-blue));
+    background: linear-gradient(45deg, var(--neon-pink), var(--neon-magenta), var(--cyber-blue));
     padding: 2px;
     border-radius: 12px;
   }
@@ -110,10 +111,10 @@
 
 @keyframes glow {
   from { 
-    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3); 
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.3); 
   }
   to { 
-    box-shadow: 0 0 30px rgba(0, 255, 136, 0.6); 
+    box-shadow: 0 0 30px rgba(255, 20, 147, 0.6); 
   }
 }
 
@@ -127,10 +128,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(158, 100%, 50%);
+  background: hsl(320, 100%, 60%);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(158, 100%, 40%);
+  background: hsl(320, 100%, 50%);
 }

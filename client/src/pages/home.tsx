@@ -25,10 +25,10 @@ export default function Home() {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-6">
-              <a href="#tools" className="text-gray-300 hover:text-[#00FF88] transition-colors">Tools</a>
-              <a href="#templates" className="text-gray-300 hover:text-[#00FF88] transition-colors">Templates</a>
-              <a href="#pricing" className="text-gray-300 hover:text-[#00FF88] transition-colors">Pricing</a>
-              <Button className="bg-gradient-to-r from-[#00FF88] to-[#00D4FF] text-black hover:shadow-lg hover:shadow-[#00FF88]/25 transition-all">
+              <a href="#tools" className="text-gray-300 hover:text-[#FF1493] transition-colors">Tools</a>
+              <a href="#templates" className="text-gray-300 hover:text-[#FF1493] transition-colors">Templates</a>
+              <a href="#pricing" className="text-gray-300 hover:text-[#FF1493] transition-colors">Pricing</a>
+              <Button className="bg-gradient-to-r from-[#FF1493] to-[#00BFFF] text-black hover:shadow-lg hover:shadow-[#FF1493]/25 transition-all">
                 Get Started
               </Button>
             </div>
@@ -50,9 +50,9 @@ export default function Home() {
       <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-[#00FF88] rounded-full filter blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#FF0080] rounded-full filter blur-3xl animate-float" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-[#00D4FF] rounded-full filter blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-[#FF1493] rounded-full filter blur-3xl animate-float"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#C71585] rounded-full filter blur-3xl animate-float" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-[#00BFFF] rounded-full filter blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
@@ -70,7 +70,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <Button 
                 size="lg"
-                className="bg-gradient-to-r from-[#00FF88] to-[#00D4FF] text-black hover:shadow-2xl hover:shadow-[#00FF88]/30 transition-all transform hover:scale-105 w-full sm:w-auto"
+                className="bg-gradient-to-r from-[#FF1493] to-[#00BFFF] text-black hover:shadow-2xl hover:shadow-[#FF1493]/30 transition-all transform hover:scale-105 w-full sm:w-auto"
                 onClick={() => document.getElementById('main-app')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <Upload className="w-5 h-5 mr-2" />
@@ -90,7 +90,7 @@ export default function Home() {
             <div className="grid md:grid-cols-3 gap-6 mt-16">
               <Card className="glass-card border-white/10 hover:bg-white/10 transition-all group">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00FF88] to-[#00D4FF] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FF1493] to-[#00BFFF] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <Camera className="text-black text-xl" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">AI Captions</h3>
@@ -100,7 +100,7 @@ export default function Home() {
               
               <Card className="glass-card border-white/10 hover:bg-white/10 transition-all group">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FF0080] to-[#00D4FF] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#C71585] to-[#00BFFF] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <Grid3X3 className="text-black text-xl" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Grid Converter</h3>
@@ -110,7 +110,7 @@ export default function Home() {
               
               <Card className="glass-card border-white/10 hover:bg-white/10 transition-all group">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00D4FF] to-[#00FF88] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00BFFF] to-[#FF1493] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <Hash className="text-black text-xl" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Trending Tags</h3>
@@ -148,20 +148,20 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-4">Tools</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-[#00FF88] transition-colors">AI Captions</a></li>
-                <li><a href="#" className="hover:text-[#00FF88] transition-colors">Grid Converter</a></li>
-                <li><a href="#" className="hover:text-[#00FF88] transition-colors">Bio Generator</a></li>
-                <li><a href="#" className="hover:text-[#00FF88] transition-colors">Hashtag Generator</a></li>
+                <li><a href="#" className="hover:text-[#FF1493] transition-colors">AI Captions</a></li>
+                <li><a href="#" className="hover:text-[#FF1493] transition-colors">Grid Converter</a></li>
+                <li><a href="#" className="hover:text-[#FF1493] transition-colors">Bio Generator</a></li>
+                <li><a href="#" className="hover:text-[#FF1493] transition-colors">Hashtag Generator</a></li>
               </ul>
             </div>
             
             <div>
               <h4 className="font-semibold mb-4">Company</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-[#00FF88] transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-[#00FF88] transition-colors">Pricing</a></li>
-                <li><a href="#" className="hover:text-[#00FF88] transition-colors">Blog</a></li>
-                <li><a href="#" className="hover:text-[#00FF88] transition-colors">Contact</a></li>
+                <li><a href="#" className="hover:text-[#FF1493] transition-colors">About</a></li>
+                <li><a href="#" className="hover:text-[#FF1493] transition-colors">Pricing</a></li>
+                <li><a href="#" className="hover:text-[#FF1493] transition-colors">Blog</a></li>
+                <li><a href="#" className="hover:text-[#FF1493] transition-colors">Contact</a></li>
               </ul>
             </div>
             
@@ -184,9 +184,9 @@ export default function Home() {
           <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">© 2024 Capzify. All rights reserved.</p>
             <div className="flex space-x-6 text-sm text-gray-400 mt-4 sm:mt-0">
-              <a href="#" className="hover:text-[#00FF88] transition-colors">Privacy</a>
-              <a href="#" className="hover:text-[#00FF88] transition-colors">Terms</a>
-              <a href="#" className="hover:text-[#00FF88] transition-colors">Support</a>
+              <a href="#" className="hover:text-[#FF1493] transition-colors">Privacy</a>
+              <a href="#" className="hover:text-[#FF1493] transition-colors">Terms</a>
+              <a href="#" className="hover:text-[#FF1493] transition-colors">Support</a>
             </div>
           </div>
         </div>

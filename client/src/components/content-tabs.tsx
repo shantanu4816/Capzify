@@ -16,35 +16,35 @@ export default function ContentTabs() {
       <TabsList className="grid w-full grid-cols-5 glass-card border-white/10 bg-transparent p-2 h-auto">
         <TabsTrigger 
           value="upload" 
-          className="flex flex-col sm:flex-row items-center gap-2 px-3 py-3 text-xs sm:text-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#00FF88] data-[state=active]:to-[#00D4FF] data-[state=active]:text-black"
+          className="flex flex-col sm:flex-row items-center gap-2 px-3 py-3 text-xs sm:text-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#FF1493] data-[state=active]:to-[#00BFFF] data-[state=active]:text-black"
         >
           <Upload className="w-4 h-4" />
           <span className="hidden sm:inline">Upload</span>
         </TabsTrigger>
         <TabsTrigger 
           value="captions" 
-          className="flex flex-col sm:flex-row items-center gap-2 px-3 py-3 text-xs sm:text-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#00FF88] data-[state=active]:to-[#00D4FF] data-[state=active]:text-black"
+          className="flex flex-col sm:flex-row items-center gap-2 px-3 py-3 text-xs sm:text-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#FF1493] data-[state=active]:to-[#00BFFF] data-[state=active]:text-black"
         >
           <PenTool className="w-4 h-4" />
           <span className="hidden sm:inline">Captions</span>
         </TabsTrigger>
         <TabsTrigger 
           value="grid" 
-          className="flex flex-col sm:flex-row items-center gap-2 px-3 py-3 text-xs sm:text-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#00FF88] data-[state=active]:to-[#00D4FF] data-[state=active]:text-black"
+          className="flex flex-col sm:flex-row items-center gap-2 px-3 py-3 text-xs sm:text-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#FF1493] data-[state=active]:to-[#00BFFF] data-[state=active]:text-black"
         >
           <Grid3X3 className="w-4 h-4" />
           <span className="hidden sm:inline">Grid</span>
         </TabsTrigger>
         <TabsTrigger 
           value="bio" 
-          className="flex flex-col sm:flex-row items-center gap-2 px-3 py-3 text-xs sm:text-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#00FF88] data-[state=active]:to-[#00D4FF] data-[state=active]:text-black"
+          className="flex flex-col sm:flex-row items-center gap-2 px-3 py-3 text-xs sm:text-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#FF1493] data-[state=active]:to-[#00BFFF] data-[state=active]:text-black"
         >
           <User className="w-4 h-4" />
           <span className="hidden sm:inline">Bio</span>
         </TabsTrigger>
         <TabsTrigger 
           value="hashtags" 
-          className="flex flex-col sm:flex-row items-center gap-2 px-3 py-3 text-xs sm:text-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#00FF88] data-[state=active]:to-[#00D4FF] data-[state=active]:text-black"
+          className="flex flex-col sm:flex-row items-center gap-2 px-3 py-3 text-xs sm:text-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#FF1493] data-[state=active]:to-[#00BFFF] data-[state=active]:text-black"
         >
           <Hash className="w-4 h-4" />
           <span className="hidden sm:inline">Tags</span>
