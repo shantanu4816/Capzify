@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Camera, Grid3X3, Hash, User, Play, Upload, Menu } from "lucide-react";
 import ContentTabs from "@/components/content-tabs";
+import capzifyLogo from "../assets/capzify-logo.png";
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,10 +14,12 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00FF88] to-[#00D4FF] flex items-center justify-center">
-                <span className="text-black text-sm font-bold">✨</span>
-              </div>
+            <div className="flex items-center space-x-3">
+              <img 
+                src={capzifyLogo} 
+                alt="Capzify Logo" 
+                className="w-8 h-8 object-contain"
+              />
               <span className="text-xl font-bold gradient-text">Capzify</span>
             </div>
             
@@ -131,10 +134,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00FF88] to-[#00D4FF] flex items-center justify-center">
-                  <span className="text-black text-sm font-bold">✨</span>
-                </div>
+              <div className="flex items-center space-x-3 mb-4">
+                <img 
+                  src={capzifyLogo} 
+                  alt="Capzify Logo" 
+                  className="w-8 h-8 object-contain"
+                />
                 <span className="text-xl font-bold gradient-text">Capzify</span>
               </div>
               <p className="text-gray-400 text-sm">The ultimate AI-powered content creation tool for Gen Z creators.</p>
