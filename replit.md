@@ -32,11 +32,18 @@ The application follows a modern full-stack architecture with clear separation b
 
 ### Data Storage
 - **Primary Database**: PostgreSQL with Drizzle ORM
-- **Development Storage**: In-memory storage using Map for rapid prototyping
+- **Authentication**: Google OAuth via Replit's OpenID Connect with session storage
 - **Database Client**: Neon serverless PostgreSQL for production
 - **Schema Management**: Drizzle migrations with TypeScript schema definitions
+- **Session Storage**: PostgreSQL-backed sessions with connect-pg-simple
 
 ## Key Components
+
+### Authentication System
+- **Google OAuth Integration**: Seamless login via Replit's OpenID Connect provider
+- **Personalized Welcome**: Shows "Hey [username], Welcome to Capzify" message after login
+- **Session Management**: Secure PostgreSQL-backed sessions with automatic refresh tokens
+- **Protected Routes**: All AI features require authentication to access
 
 ### Content Generation System
 - **Caption Generator**: Creates social media captions based on images or text prompts with customizable mood and length

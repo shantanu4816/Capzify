@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Camera, Grid3X3, Hash, User, Play, Upload, Menu } from "lucide-react";
+import { Camera, Grid3X3, Hash, User, Play, Upload, Menu, LogOut } from "lucide-react";
+import { useAuth } from "@/hooks/useAuth";
 import ContentTabs from "@/components/content-tabs";
-import capzifyLogo from "../assets/capzify-logo.png";
+import logoImage from "@assets/20250729_1720_Enhanced Neon Logo_remix_01k1b07533e7f891dryy51aqzq_1753792282917.png";
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { user } = useAuth();
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
@@ -16,7 +18,7 @@ export default function Home() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-3">
               <img 
-                src={capzifyLogo} 
+                src={logoImage} 
                 alt="Capzify Logo" 
                 className="w-8 h-8 object-contain"
               />
@@ -25,11 +27,16 @@ export default function Home() {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-6">
-              <a href="#tools" className="text-gray-300 hover:text-[#FF1493] transition-colors">Tools</a>
-              <a href="#templates" className="text-gray-300 hover:text-[#FF1493] transition-colors">Templates</a>
-              <a href="#pricing" className="text-gray-300 hover:text-[#FF1493] transition-colors">Pricing</a>
-              <Button className="bg-gradient-to-r from-[#FF1493] to-[#00BFFF] text-black hover:shadow-lg hover:shadow-[#FF1493]/25 transition-all">
-                Get Started
+              <span className="text-gray-300">
+                Hey {user?.firstName || user?.email?.split('@')[0] || 'there'}!
+              </span>
+              <Button 
+                variant="ghost"
+                onClick={() => window.location.href = '/api/logout'}
+                className="text-gray-300 hover:text-[#FF1493] transition-colors"
+              >
+                <LogOut className="w-4 h-4 mr-2" />
+                Logout
               </Button>
             </div>
             
@@ -136,7 +143,7 @@ export default function Home() {
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <img 
-                  src={capzifyLogo} 
+                  src={logoImage} 
                   alt="Capzify Logo" 
                   className="w-8 h-8 object-contain"
                 />
