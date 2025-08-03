@@ -1,6 +1,6 @@
 import { useAuth } from "@/hooks/useAuth";
 import { useEffect, useState } from "react";
-import logoImage from "@assets/20250729_1720_Enhanced Neon Logo_remix_01k1b07533e7f891dryy51aqzq_1753792282917.png";
+import logoImage from "@assets/Neon.png";
 
 export default function Welcome() {
   const { user } = useAuth();

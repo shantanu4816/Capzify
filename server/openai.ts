@@ -2,7 +2,7 @@ import OpenAI from "openai";
 
 // the newest OpenAI model is "gpt-4o" which was released May 13, 2024. do not change this unless explicitly requested by the user
 const openai = new OpenAI({ 
-  apiKey: process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY_ENV_VAR || "default_key" 
+  apiKey: process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY_ENV_VAR || "sk-dummy-key-for-development" 
 });
 
 interface CaptionOptions {
@@ -27,6 +27,15 @@ interface HashtagOptions {
 }
 
 export async function generateCaptions(options: CaptionOptions): Promise<string[]> {
+  // Mock responses for development when no OpenAI API key is set
+  if (!process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY === "sk-dummy-key-for-development") {
+    return [
+      "✨ Living my best life! #blessed #goodvibes",
+      "When life gives you lemons, make lemonade 🍋✨",
+      "Just another day in paradise 🌅"
+    ];
+  }
+  
   try {
     const messages: any[] = [
       {
@@ -82,11 +91,21 @@ export async function generateCaptions(options: CaptionOptions): Promise<string[
     const result = JSON.parse(response.choices[0].message.content || '{"captions": []}');
     return result.captions || [];
   } catch (error) {
-    throw new Error("Failed to generate captions: " + error.message);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    throw new Error("Failed to generate captions: " + errorMessage);
   }
 }
 
 export async function generateBio(options: BioOptions): Promise<string[]> {
+  // Mock responses for development when no OpenAI API key is set
+  if (!process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY === "sk-dummy-key-for-development") {
+    return [
+      "✨ Creative soul | Coffee lover ☕ | Making magic happen",
+      "Professional by day, dreamer by night 🌙",
+      "Living life one adventure at a time 🚀"
+    ];
+  }
+  
   try {
     const response = await openai.chat.completions.create({
       model: "gpt-4o",
@@ -117,7 +136,8 @@ export async function generateBio(options: BioOptions): Promise<string[]> {
     const result = JSON.parse(response.choices[0].message.content || '{"bios": []}');
     return result.bios || [];
   } catch (error) {
-    throw new Error("Failed to generate bio: " + error.message);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    throw new Error("Failed to generate bio: " + errorMessage);
   }
 }
 
@@ -126,6 +146,15 @@ export async function generateHashtags(options: HashtagOptions): Promise<{
   mediumReach: string[];
   niche: string[];
 }> {
+  // Mock responses for development when no OpenAI API key is set
+  if (!process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY === "sk-dummy-key-for-development") {
+    return {
+      highReach: ["#love", "#instagood", "#photooftheday", "#beautiful", "#happy"],
+      mediumReach: ["#lifestyle", "#fashion", "#travel", "#food", "#fitness"],
+      niche: ["#minimalist", "#aesthetic", "#vintage", "#streetstyle", "#art"]
+    };
+  }
+  
   try {
     const response = await openai.chat.completions.create({
       model: "gpt-4o",
@@ -156,11 +185,17 @@ export async function generateHashtags(options: HashtagOptions): Promise<{
       niche: result.niche || []
     };
   } catch (error) {
-    throw new Error("Failed to generate hashtags: " + error.message);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    throw new Error("Failed to generate hashtags: " + errorMessage);
   }
 }
 
 export async function analyzeImage(base64Image: string): Promise<string> {
+  // Mock responses for development when no OpenAI API key is set
+  if (!process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY === "sk-dummy-key-for-development") {
+    return "This is a beautiful image with vibrant colors and great composition. Perfect for social media!";
+  }
+  
   try {
     const response = await openai.chat.completions.create({
       model: "gpt-4o",
@@ -186,6 +221,7 @@ export async function analyzeImage(base64Image: string): Promise<string> {
 
     return response.choices[0].message.content || "Unable to analyze image";
   } catch (error) {
-    throw new Error("Failed to analyze image: " + error.message);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    throw new Error("Failed to analyze image: " + errorMessage);
   }
 }

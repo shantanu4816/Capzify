@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Camera, Grid3X3, Hash, User, Play, Upload, Menu, LogOut } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import ContentTabs from "@/components/content-tabs";
-import logoImage from "@assets/20250729_1720_Enhanced Neon Logo_remix_01k1b07533e7f891dryy51aqzq_1753792282917.png";
+import logoImage from "@assets/Neon.png";
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

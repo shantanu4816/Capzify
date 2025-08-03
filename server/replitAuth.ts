@@ -8,8 +8,11 @@ import memoize from "memoizee";
 import connectPg from "connect-pg-simple";
 import { storage } from "./storage";
 
-if (!process.env.REPLIT_DOMAINS) {
-  throw new Error("Environment variable REPLIT_DOMAINS not provided");
+// Check if we're in development mode (no REPLIT_DOMAINS)
+const isDevelopment = !process.env.REPLIT_DOMAINS;
+
+if (isDevelopment) {
+  console.warn("REPLIT_DOMAINS not provided. Running in development mode without authentication.");
 }
 
 const getOidcConfig = memoize(
@@ -23,6 +26,20 @@ const getOidcConfig = memoize(
 );
 
 export function getSession() {
+  if (isDevelopment) {
+    // Simple session for development
+    return session({
+      secret: process.env.SESSION_SECRET || 'dev-secret',
+      resave: false,
+      saveUninitialized: false,
+      cookie: {
+        httpOnly: true,
+        secure: false, // Allow HTTP in development
+        maxAge: 7 * 24 * 60 * 60 * 1000, // 1 week
+      },
+    });
+  }
+  
   const sessionTtl = 7 * 24 * 60 * 60 * 1000; // 1 week
   const pgStore = connectPg(session);
   const sessionStore = new pgStore({
@@ -69,6 +86,12 @@ async function upsertUser(
 export async function setupAuth(app: Express) {
   app.set("trust proxy", 1);
   app.use(getSession());
+  
+  if (isDevelopment) {
+    console.log("Skipping passport setup for development");
+    return;
+  }
+  
   app.use(passport.initialize());
   app.use(passport.session());
 
@@ -128,6 +151,11 @@ export async function setupAuth(app: Express) {
 }
 
 export const isAuthenticated: RequestHandler = async (req, res, next) => {
+  if (isDevelopment) {
+    // Skip authentication in development
+    return next();
+  }
+  
   const user = req.user as any;
 
   if (!req.isAuthenticated() || !user.expires_at) {
